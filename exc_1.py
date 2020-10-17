@@ -19,7 +19,7 @@ def play_again():
     if again == "N":
         return False
     elif again == "Y":
-        global attempts
+        global attempts   # needed to use global var, not local one
         attempts = available_attempts
         return True
     else:
