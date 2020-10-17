@@ -1,6 +1,6 @@
 # returns a list with user's inputs
 def get_input():  
-    res = ()
+    res = []
     try:
         str = input("Enter numbers: ('exit for quit'): ")
         if str == 'exit':
@@ -11,10 +11,10 @@ def get_input():
         res = get_input()
     return res
 
-# calculate the sum of the list
-def calculate(lst):
+# calculate the sum of the arguments
+def calculate(*args):
     sum = 0
-    for i in lst:
+    for i in args:
         sum += i
     return sum
 
@@ -22,9 +22,9 @@ while True:
     user_input = get_input()
     if not user_input:   # if list is empty
         break
-    print(calculate(user_input))
+    print(calculate(*user_input))
 
-
+sum()
 
 
 
