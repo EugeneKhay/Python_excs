@@ -24,8 +24,6 @@ while True:
         break
     print(calculate(*user_input))
 
-sum()
-
 
 
 
