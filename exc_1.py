@@ -36,8 +36,5 @@ while True:
     if s == num:
         print(f"Your number {s} is correct!")
         if not play_again():
-            break   
-    if s > num:
-        print(f"Your number {s} is too big!")
-    if s < num:
-        print(f"Your number {s} is too low!")
+            break
+    print(f"Your number {s} is too big!" if s > num else f"Your number {s} is too low!")   
