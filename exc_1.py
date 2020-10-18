@@ -4,6 +4,7 @@ available_attempts = 3
 num = random.randint(0, 100)
 attempts = available_attempts
 
+
 def user_input():
     res = 0
     try:
@@ -13,6 +14,7 @@ def user_input():
         print("Your input is wrong!")
         res = user_input()
     return res
+
 
 def play_again():
     again = input("Play again (Y/N)?: ")
@@ -25,7 +27,8 @@ def play_again():
     else:
         print("Unknown command")
         return play_again()
-    
+
+
 while True:
     if attempts <= 0:
         print("Too many attempts, you lose!")
@@ -37,4 +40,4 @@ while True:
         print(f"Your number {s} is correct!")
         if not play_again():
             break
-    print(f"Your number {s} is too big!" if s > num else f"Your number {s} is too low!")   
+    print(f"Your number {s} is too big!" if s > num else f"Your number {s} is too low!")

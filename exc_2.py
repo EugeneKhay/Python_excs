@@ -11,6 +11,7 @@ def get_input():
         res = get_input()
     return res
 
+
 # calculate the sum of the arguments
 def calculate(*args):
     sum = 0
@@ -18,13 +19,13 @@ def calculate(*args):
         sum += i
     return sum
 
+
 while True:
     user_input = get_input()
     if not user_input:   # if list is empty
         break
     print(calculate(*user_input))
 
-sum()
 
 
 
