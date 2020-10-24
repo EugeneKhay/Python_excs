@@ -13,7 +13,7 @@ def first_last(item):
 
     # return item[:1] + item[-1:] 
     
-    return item[0 : len(item) : len(item)-1]
+    return item[0: len(item): len(item)-1]
 
 
 def even_odd_sums(seq):
@@ -61,7 +61,58 @@ def mysum(*args):
     return first
 
 
-print(mysum())
+def mysum_bigger_than(threshhold, *args):
+    if not args:
+        return args
+    first = None
+    first_index = 0
+    for index, item in enumerate(args):
+        if item > threshhold:
+            first = item
+            first_index = index
+            break
+    if first == None:
+        return None
+    else:
+        for i in args[first_index+1:]:
+            if i > threshhold:
+                first += i
+    return first
+
+
+def sum_numeric(*args):
+    sum = 0
+    for i in args:
+        try:
+            sum += int(i)
+        except:
+            pass
+    return sum
+
+
+def dict_combine(dicts):
+    """ Write a function that takes a list of dicts and returns a single dict that combines
+        all of the keys and values. If a key appears in more than one argument, the
+        value should be a list containing all of the values from the arguments.
+    """
+    result = {}
+    for dic in dicts:
+        for i in dic.keys():
+            if i not in result.keys():
+                result[i] = dic[i]
+            else:
+                lst = []
+                lst.append(result[i])
+                lst.append(dic[i])
+                result[i] = lst
+    return result
+
+
+
+print(dict_combine([{1:"one", 2: "two"}, {"three": 3, "four": 4, 1: "zero"}, {"four": 450}]))
+#print(sum_numeric(10, 20, 'a', '30', 'bcd'))
+#print(mysum_bigger_than([1,2], [2,2], [0,3]))
+#print(mysum())
 #print(myzip([10, 20,30], 'abc', (1, 2, 3)))
 #print(plus_minus([10, 20, 30, 40]))
 #print(first_last('shjdhjsd'))
